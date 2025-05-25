@@ -7,7 +7,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-const allowedUrls = ["http://localhost:5173","https://rupesh19.app.n8n.cloud"];
+const allowedUrls = ["http://localhost:5173"];
 app.use(
   cors({
     origin: function (origin, callback) {
