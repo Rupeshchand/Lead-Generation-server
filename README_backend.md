@@ -40,7 +40,7 @@ Create `.env` file:
     CORS should be configured to allow frontend to access data
 
     ```js
-    const allowedUrls = ["http://localhost:5173",""];
+    const allowedUrls = ["http://localhost:5173","https://lead-generation-coral.vercel.app/"];
     ```
 
 ## Test API

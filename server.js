@@ -7,7 +7,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-const allowedUrls = ["http://localhost:5173"];
+const allowedUrls = ["http://localhost:5173", "https://lead-generation-coral.vercel.app/"];
 app.use(
   cors({
     origin: function (origin, callback) {
