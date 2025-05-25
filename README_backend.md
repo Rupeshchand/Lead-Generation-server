@@ -24,7 +24,7 @@ This is the Express.js backend that accepts lead submissions from client and for
 
 ## Installation
     ```bash
-    git clone <https://github.com/Rupeshchand/Lead-Generation-server.git>
+    git clone https://github.com/Rupeshchand/Lead-Generation-server.git
     cd backend
     npm install
     npm start
@@ -67,3 +67,4 @@ Create `.env` file:
     - CRM Integration
         We can forward leads to CRM systems like HubSpot, Salesforce, or Zoho using APIs.
     - API Documentations using Postman
+    - Authentication using JWT or Google OAuth 2.0
