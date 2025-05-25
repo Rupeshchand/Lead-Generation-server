@@ -26,8 +26,16 @@ app.use(express.json());
 
 app.post("/api/submit-lead", async (req, res) => {
   const { name, email, company, message } = req.body;
-  if (!name || !email) {
-    return res.status(400).json({ message: "Please enter Name and Email" });
+
+  //Name validation
+  if (!name || typeof name !== 'string') {
+    return res.status(400).json({ message: "Enter valid name" });
+  }
+
+  //Email validation
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+  if(!email || !emailRegex.test(email)){
+    return res.status(400).json({message: "Enter valid email"})
   }
   try {
     await axios.post(process.env.N8N_WEBHOOK_URL, {
