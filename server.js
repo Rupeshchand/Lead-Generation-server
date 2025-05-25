@@ -7,7 +7,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-const allowedUrls = ["http://localhost:5173"];
+const allowedUrls = ["http://localhost:5173","https://rupesh19.app.n8n.cloud"];
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -18,7 +18,7 @@ app.use(
       }
     },
     credentials: true,
-    methods: ["GET", "POST"],
+    methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type"],
   })
 );
@@ -30,7 +30,7 @@ app.post("/api/submit-lead", async (req, res) => {
     return res.status(400).json({ message: "Please enter Name and Email" });
   }
   try {
-    await axios(process.env.N8N_WEBHOOK_URL, {
+    await axios.post(process.env.N8N_WEBHOOK_URL, {
       name,
       email,
       company,
